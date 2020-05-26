@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import BottomBar from "./bottomBar";
+import Header from "../components/header";
 
 const Container = styled.div`
 	position: fixed;
@@ -16,6 +17,7 @@ const Container = styled.div`
 function MusicJs(props) {
 	return (
 		<Container>
+			<Header />
 			<BottomBar />
 		</Container>
 	);
