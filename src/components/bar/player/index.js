@@ -36,7 +36,7 @@ const FullScreenPlayer = styled.div`
 `;
 
 function Player(props) {
-	const { navState, musicJs } = props;
+	const { navState } = props;
 	const { isFullScreen, debug } = navState;
 
 	return (
