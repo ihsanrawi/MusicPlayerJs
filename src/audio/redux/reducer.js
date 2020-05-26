@@ -1,9 +1,46 @@
-const initialState = {};
+import {
+	PLAY,
+	PAUSE,
+	RESUME,
+	PREV_SONG,
+	NEXT_SONG,
+	CHANGE_VOLUME,
+} from "./constants";
+
+const initialState = {
+	isPlaying: false,
+	hasAudio: false,
+	currentIndex: 0,
+	playlist: [],
+	inQueue: false,
+	queue: [],
+	prevQueue: [],
+	time: {
+		current: null,
+		max: null,
+	},
+	volume: 0.5,
+};
 
 const audioReducer = (state = initialState, action) => {
 	switch (action.type) {
-		// case typeName:
-		// return { ...state, ...payload };
+		case PLAY:
+			return { ...state, isFullScreen: !state.isFullScreen };
+
+		case PAUSE:
+			return { ...state, isPlaying: false };
+
+		case RESUME:
+			return { ...state, isPlaying: false };
+
+		case PREV_SONG:
+			return { ...state, isFullScreen: !state.isFullScreen };
+
+		case NEXT_SONG:
+			return { ...state, isFullScreen: !state.isFullScreen };
+
+		case CHANGE_VOLUME:
+			return { ...state, volume: action.volume };
 
 		default:
 			return state;
