@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import BottomBar from "../components/bar";
+import BottomBar from "./bottomBar";
 
 const Container = styled.div`
 	position: fixed;

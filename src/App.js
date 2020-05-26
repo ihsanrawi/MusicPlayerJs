@@ -1,5 +1,5 @@
 import React from "react";
-import MusicJs from "./components/index";
+import MusicJs from "./containers/musicJs";
 
 function App() {
 	return (

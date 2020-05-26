@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Player from "./player";
-import Overlay from "./overlay";
+import Player from "../components/bar/player";
+import Overlay from "../components/bar/overlay";
 
 const BarContainer = styled.div`
 	z-index: 50;
