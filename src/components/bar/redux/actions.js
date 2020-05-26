@@ -1,3 +1,3 @@
 import { TOGGLE_FULLSCREEN } from "./constants";
 
-export const TOGGLE_FULLSCREEN = () => ({ type: "TOGGLE_FULLSCREEN" });
+export const toggleFullscreen = () => ({ type: TOGGLE_FULLSCREEN });
