@@ -6,5 +6,9 @@ export const PREV_SONG = "PREV_SONG";
 export const NEXT_SONG = "NEXT_SONG";
 export const CHANGE_VOLUME = "CHANGE_VOLUME";
 
-// view
+// Navigation
 export const TOGGLE_FULLSCREEN = "TOGGLE_FULLSCREEN";
+
+// View
+export const PUSH_VIEW = "PUSH_VIEW";
+export const POP_VIEW = "POP_VIEW";
