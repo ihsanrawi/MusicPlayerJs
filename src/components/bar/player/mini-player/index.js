@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styled, { css } from "styled-components";
 
 import { constants } from "../../../../general";
+import { toggleFullscreen } from "../../redux/actions";
 
 const { color } = constants;
 const path = "images";
@@ -92,12 +93,15 @@ const Svg = styled.img`
 	margin: 0 8px;
 `;
 
-function MiniPlayer(props) {
-	const { navState, audioState } = props;
+function MiniPlayer({ navState, audioState, toggleFullscreen }) {
+	// const { navState, audioState, toggleFullscreen } = props;
 	const { debug, isFullScreen } = navState;
 	const { title, artwork } = audioState;
 	return (
-		<Container debug={debug} isFullScreen={isFullScreen}>
+		<Container
+			debug={debug}
+			isFullScreen={isFullScreen}
+			onClick={!isFullScreen && toggleFullscreen}>
 			<ArtworkContainer isFullScreen={isFullScreen}>
 				<Artwork isFullScreen={isFullScreen} src={artwork} />
 			</ArtworkContainer>
@@ -122,4 +126,10 @@ const mapStateToProps = (state) => ({
 	},
 });
 
-export default connect(mapStateToProps)(MiniPlayer);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		toggleFullscreen: () => dispatch(toggleFullscreen()),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MiniPlayer);

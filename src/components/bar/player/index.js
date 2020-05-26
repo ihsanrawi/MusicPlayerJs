@@ -7,6 +7,7 @@ import Scrubber from "./components/scrubber";
 import TrackInfo from "./components/track-info";
 import Controls from "./components/controls";
 import VolumeSlider from "./components/volume-slider";
+import { toggleFullscreen } from "../redux/actions";
 
 const Container = styled.div`
 	position: fixed;
@@ -41,7 +42,9 @@ function Player(props) {
 
 	return (
 		<Container debug={debug} isFullScreen={isFullScreen}>
-			<CloseControls hidden={!isFullScreen}>
+			<CloseControls
+				hidden={!isFullScreen}
+				onClick={isFullScreen && props.toggleFullscreen}>
 				<Svg src="images/chevron_wide.svg" />
 			</CloseControls>
 			<MiniPlayer />
@@ -59,4 +62,10 @@ const mapStateToProps = (state) => ({
 	navState: state.navState,
 });
 
-export default connect(mapStateToProps)(Player);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		toggleFullscreen: () => dispatch(toggleFullscreen()),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Player);

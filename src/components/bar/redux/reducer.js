@@ -8,7 +8,7 @@ const initialState = {
 const navReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case TOGGLE_FULLSCREEN:
-			return { ...state, isFullscreen: !state.isFullscreen };
+			return { ...state, isFullScreen: !state.isFullScreen };
 
 		default:
 			return state;

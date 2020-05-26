@@ -31,3 +31,7 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(Overlay);
+
+/**
+ * todo:: add togglefullscreen function here
+ */
