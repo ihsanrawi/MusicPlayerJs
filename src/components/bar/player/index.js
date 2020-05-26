@@ -44,7 +44,7 @@ function Player(props) {
 		<Container debug={debug} isFullScreen={isFullScreen}>
 			<CloseControls
 				hidden={!isFullScreen}
-				onClick={isFullScreen && props.toggleFullscreen}>
+				onClick={() => isFullScreen && props.toggleFullscreen}>
 				<Svg src="images/chevron_wide.svg" />
 			</CloseControls>
 			<MiniPlayer />
