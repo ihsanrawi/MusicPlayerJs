@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import { constants } from "../../general";
+import { constants } from "../../utils";
 
 const { color } = constants;
 

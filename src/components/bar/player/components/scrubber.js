@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
 
-import { constants } from "../../../../general";
+import { constants } from "../../../../utils";
 const { color } = constants;
 
 const Container = styled.div`
