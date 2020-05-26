@@ -4,7 +4,7 @@ import thunkMiddleware from "redux-thunk";
 // import viewReducer from "./views/reducer";
 // import apiReducer from "./api/reducer";
 // import audioReducer from "./audio/redux/reducer";
-import navReducer from "./components/bar/redux/reducer";
+import navReducer from "./redux/reducers/navigation";
 
 const rootReducer = combineReducers({
 	// viewState: viewReducer,

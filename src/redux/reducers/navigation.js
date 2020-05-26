@@ -1,4 +1,4 @@
-import { TOGGLE_FULLSCREEN } from "./constants";
+import { TOGGLE_FULLSCREEN } from "../types";
 
 const initialState = {
 	isFullScreen: false,

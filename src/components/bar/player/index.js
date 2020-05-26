@@ -7,7 +7,7 @@ import Scrubber from "./components/scrubber";
 import TrackInfo from "./components/track-info";
 import Controls from "./components/controls";
 import VolumeSlider from "./components/volume-slider";
-import { toggleFullscreen } from "../redux/actions";
+import { toggleFullscreen } from "../../../redux/actions/navigation";
 
 const Container = styled.div`
 	position: fixed;

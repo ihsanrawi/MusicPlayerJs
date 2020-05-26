@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled, { css } from "styled-components";
 
 import { constants } from "../../../../general";
-import { toggleFullscreen } from "../../redux/actions";
+import { toggleFullscreen } from "../../../../redux/actions/navigation";
 
 const { color } = constants;
 const path = "images";

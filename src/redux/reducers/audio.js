@@ -5,7 +5,7 @@ import {
 	PREV_SONG,
 	NEXT_SONG,
 	CHANGE_VOLUME,
-} from "./constants";
+} from "./types";
 
 const initialState = {
 	isPlaying: false,
