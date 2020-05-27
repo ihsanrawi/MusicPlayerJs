@@ -2,13 +2,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunkMiddleware from "redux-thunk";
 
 import viewReducer from "./redux/reducers/view";
-// import apiReducer from "./api/reducer";
+import apiReducer from "./redux/reducers/api";
 import audioReducer from "./redux/reducers/audio";
 import navReducer from "./redux/reducers/navigation";
 
 const rootReducer = combineReducers({
 	viewState: viewReducer,
-	// apiState: apiReducer,
+	apiState: apiReducer,
 	audioState: audioReducer,
 	navState: navReducer,
 });
