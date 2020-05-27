@@ -36,23 +36,20 @@ const FullScreenPlayer = styled.div`
 	margin-top: 5vh;
 `;
 
-function Player(props) {
-	const { navState } = props;
+function Player({ navState, toggleFullscreen, musicJs }) {
 	const { isFullScreen, debug } = navState;
 
 	return (
 		<Container debug={debug} isFullScreen={isFullScreen}>
-			<CloseControls
-				hidden={!isFullScreen}
-				onClick={() => isFullScreen && props.toggleFullscreen}>
+			<CloseControls hidden={!isFullScreen} onClick={toggleFullscreen}>
 				<Svg src="images/chevron_wide.svg" />
 			</CloseControls>
 			<MiniPlayer />
 			<FullScreenPlayer hidden={!isFullScreen}>
-				<Scrubber musicJs={props.musicJs} />
-				<TrackInfo musicJs={props.musicJs} />
-				<Controls musicJs={props.musicJs} />
-				<VolumeSlider musicJs={props.musicJs} />
+				<Scrubber musicJs={musicJs} />
+				<TrackInfo musicJs={musicJs} />
+				<Controls musicJs={musicJs} />
+				<VolumeSlider musicJs={musicJs} />
 			</FullScreenPlayer>
 		</Container>
 	);

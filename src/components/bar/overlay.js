@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import { constants } from "../../utils";
+import { toggleFullscreen } from "../../redux/actions/navigation";
 
 const { color } = constants;
 
@@ -17,20 +18,29 @@ const Container = styled.div`
 	cursor: pointer;
 `;
 
-function Overlay(props) {
+function Overlay({ navState, toggleFullscreen }) {
+	const { isFullScreen } = navState;
 	const [isClosing, setIsClosing] = useState(false);
 
-	const { navState } = props;
-	const { isFullScreen } = navState;
-
-	return <Container isFullScreen={isFullScreen || isClosing} />;
+	return (
+		<Container
+			isFullScreen={isFullScreen || isClosing}
+			onClick={toggleFullscreen}
+		/>
+	);
 }
 
 const mapStateToProps = (state) => ({
 	navState: state.navState,
 });
 
-export default connect(mapStateToProps)(Overlay);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		toggleFullscreen: () => dispatch(toggleFullscreen()),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Overlay);
 
 /**
  * todo:: add togglefullscreen function here
