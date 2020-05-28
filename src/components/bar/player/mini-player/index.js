@@ -101,7 +101,7 @@ function MiniPlayer({ navState, audioState, toggleFullscreen }) {
 		<Container
 			debug={debug}
 			isFullScreen={isFullScreen}
-			onClick={!isFullScreen && toggleFullscreen}>
+			onClick={!isFullScreen ? toggleFullscreen : null}>
 			<ArtworkContainer isFullScreen={isFullScreen}>
 				<Artwork isFullScreen={isFullScreen} src={artwork} />
 			</ArtworkContainer>
