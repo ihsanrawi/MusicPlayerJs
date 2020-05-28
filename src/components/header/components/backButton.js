@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import { constants } from "../../../utils";
-import Icon from "../../../utils/components/icon";
+import Icon from "../../commons/icon";
 import { popView } from "../../../redux/actions/view";
 
 const { color } = constants;
