@@ -16,7 +16,7 @@ const Container = styled.div`
 	left: 0;
 	right: 0;
 	margin: 0 auto;
-	max-width: 900px;
+	max-width: 1200px;
 	height: ${(props) => (props.hideTitle ? "48px" : "90px")};
 	padding-left: 48px;
 	background: ${color.white};
