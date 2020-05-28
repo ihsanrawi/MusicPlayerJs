@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Player from "../components/bar/player";
 import Overlay from "../components/bar/overlay";
 
-const BarContainer = styled.div`
+const Container = styled.div`
 	z-index: 50;
 	position: fixed;
 	left: 0;
@@ -16,13 +16,13 @@ const BarContainer = styled.div`
 	align-items: center;
 `;
 
-function BottomBar(props) {
+function BarContainer(props) {
 	return (
-		<BarContainer>
+		<Container>
 			<Overlay />
 			<Player />
-		</BarContainer>
+		</Container>
 	);
 }
 
-export default BottomBar;
+export default BarContainer;

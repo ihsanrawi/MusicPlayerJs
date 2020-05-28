@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import BottomBar from "./bottomBar";
+import BarContainer from "./barContainer";
 import Header from "../components/header";
+import PageContainer from "./pageContainer";
 
 const Container = styled.div`
 	position: fixed;
@@ -18,7 +19,8 @@ function MusicJs(props) {
 	return (
 		<Container>
 			<Header />
-			<BottomBar />
+			<PageContainer />
+			<BarContainer />
 		</Container>
 	);
 }
