@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 import { constants } from "../../utils";
 import { popView } from "../../redux/actions/view";
-import Icon from "../../utils/components/icon";
+import BackButton from "./components/backButton";
+import TitleStack from "./components/titleStack";
 
 const { color } = constants;
 
@@ -23,30 +24,13 @@ const Container = styled.div`
 	border: ${(props) => props.debug && "solid 1px red"};
 `;
 
-const ChevronContainer = styled.div`
-	cursor: pointer;
-	width: 40px;
-	opacity: ${(props) => (props.isShown ? 1 : 0)};
-	transform: ${(props) =>
-		props.isShown ? "scale(1) translateX(0)" : "scale(0) translateX(20px)"};
-`;
-
-export const Header = ({ navState, viewState }) => {
+export const Header = ({ navState }) => {
 	const { debug } = navState;
-	const { stack } = viewState;
-
-	const showChevron = stack.length > 1;
 
 	return (
 		<Container debug={debug}>
-			<ChevronContainer isShown={showChevron}>
-				<Icon
-					name="chevron-left"
-					size={38}
-					color={color.red[4]}
-					onClick={showChevron ? popView : null}
-				/>
-			</ChevronContainer>
+			<BackButton />
+			<TitleStack />
 		</Container>
 	);
 };
