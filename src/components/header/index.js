@@ -1,9 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
 
 import { constants } from "../../utils";
-import { popView } from "../../redux/actions/view";
 import BackButton from "./components/backButton";
 import TitleStack from "./components/titleStack";
 
@@ -21,29 +19,15 @@ const Container = styled.div`
 	padding-left: 48px;
 	background: ${color.white};
 	overflow: hidden;
-	border: ${(props) => props.debug && "solid 1px red"};
 `;
 
-export const Header = ({ navState }) => {
-	const { debug } = navState;
-
+export const Header = () => {
 	return (
-		<Container debug={debug}>
+		<Container>
 			<BackButton />
 			<TitleStack />
 		</Container>
 	);
 };
 
-const mapStateToProps = (state) => ({
-	navState: state.navState,
-	viewState: state.viewState,
-});
-
-const mapDispatchToProps = (dispatch) => {
-	return {
-		popView: () => dispatch(popView()),
-	};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;
