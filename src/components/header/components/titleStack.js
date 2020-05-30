@@ -51,6 +51,7 @@ const Title = styled.h1`
 export const TitleStack = ({ viewState, navState }) => {
 	const { stack } = viewState;
 	const { debug } = navState;
+
 	const currentStack = stack[stack.length - 1];
 	const { hideTitle } = currentStack.props;
 
@@ -70,7 +71,7 @@ export const TitleStack = ({ viewState, navState }) => {
 					isTitle={isTitle}>
 					<Title
 						debug={debug}
-						onClick={isBackButton ? popView : null}>
+						onClick={() => (isBackButton ? popView : null)}>
 						{title || name}
 					</Title>
 				</Container>
