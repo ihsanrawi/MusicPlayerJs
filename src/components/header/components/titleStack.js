@@ -38,19 +38,15 @@ const Container = styled.div`
 		&:active {
 			color: ${(props) => props.isBackButton && color.redAlpha[2]};
 		}
-		border: ${(props) => props.debug && "solid 1px red"};
 	}
-	border: ${(props) => props.debug && "solid 1px red"};
 `;
 
 const Title = styled.h1`
 	margin: 0;
-	border: ${(props) => props.debug && "solid 1px red"};
 `;
 
-export const TitleStack = ({ viewState, navState }) => {
+export const TitleStack = ({ viewState, popView }) => {
 	const { stack } = viewState;
-	const { debug } = navState;
 
 	const currentStack = stack[stack.length - 1];
 	const { hideTitle } = currentStack.props;
@@ -63,15 +59,12 @@ export const TitleStack = ({ viewState, navState }) => {
 		return (
 			index >= stack.length - 3 && (
 				<Container
-					debug={debug}
 					key={`title-${name}`}
 					isHidden={isHidden}
 					isBackButton={isBackButton}
 					exiting={false}
 					isTitle={isTitle}>
-					<Title
-						debug={debug}
-						onClick={() => (isBackButton ? popView : null)}>
+					<Title onClick={() => (isBackButton ? popView() : null)}>
 						{title || name}
 					</Title>
 				</Container>
@@ -82,7 +75,6 @@ export const TitleStack = ({ viewState, navState }) => {
 
 const mapStateToProps = (state) => ({
 	viewState: state.viewState,
-	navState: state.navState,
 });
 
 const mapDispatchToProps = (dispatch) => {

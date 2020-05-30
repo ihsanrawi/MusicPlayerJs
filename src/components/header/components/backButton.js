@@ -16,7 +16,7 @@ const ChevronContainer = styled.div`
 		props.isShown ? "scale(1) translateX(0)" : "scale(0) translateX(20px)"};
 `;
 
-function BackButton({ viewState }) {
+function BackButton({ viewState, popView }) {
 	const { stack } = viewState;
 	const showChevron = stack.length > 1;
 
@@ -26,7 +26,7 @@ function BackButton({ viewState }) {
 				name="chevron-left"
 				size={38}
 				color={color.red[4]}
-				onClick={showChevron ? popView : null}
+				onClick={() => (showChevron ? popView() : null)}
 			/>
 		</ChevronContainer>
 	);
