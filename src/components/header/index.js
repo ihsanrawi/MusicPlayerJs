@@ -8,6 +8,7 @@ import TitleStack from "./components/titleStack";
 const { color } = constants;
 
 const Container = styled.div`
+	z-index: 2;
 	position: fixed;
 	display: flex;
 	top: 0;
