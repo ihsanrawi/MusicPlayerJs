@@ -11,10 +11,17 @@ const Container = styled.div`
 
 const ButtonContainer = styled.div``;
 
-export const ArtistsView = ({ viewState, pushView }) => {
-	const changeView = (name) => {
+export const ArtistListView = ({ pushView, apiState }) => {
+	let { artists } = apiState.data;
+
+	if (artists.length == 0) {
+		artists = ["Adele", "Bring Me The Horizon", "Hujan", "Yuna"];
+	}
+
+	const changeView = (title) => {
 		pushView({
-			name,
+			name: "Artist",
+			title,
 			props: {},
 		});
 	};
@@ -22,18 +29,16 @@ export const ArtistsView = ({ viewState, pushView }) => {
 	return (
 		<Container>
 			<ButtonContainer>
-				<Button
-					label="Artists"
-					theme="red"
-					chevron
-					onClick={() => changeView("Artists")}
-				/>
-				<Button
-					label="Albums"
-					theme="red"
-					chevron
-					onClick={() => changeView("Albums")}
-				/>
+				{artists &&
+					artists.map((artist, index) => (
+						<Button
+							key={`artist-${artist}`}
+							label={artist}
+							theme="red"
+							chevron
+							onClick={() => changeView(artist)}
+						/>
+					))}
 			</ButtonContainer>
 		</Container>
 	);
@@ -41,7 +46,7 @@ export const ArtistsView = ({ viewState, pushView }) => {
 
 const mapStateToProps = (state) => ({
 	navState: state.navState,
-	viewState: state.viewState,
+	apiState: state.apiState,
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -50,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtistsView);
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistListView);
