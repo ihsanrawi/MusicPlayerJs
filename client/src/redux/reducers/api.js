@@ -7,7 +7,8 @@ import {
 
 const initialState = {
 	data: {
-		artists: [],
+		artists: ["Adele", "Bring Me The Horizon", "Hujan", "Yuna"],
+		// artists: [],
 		albums: [],
 		artistData: {},
 		albumData: {},
