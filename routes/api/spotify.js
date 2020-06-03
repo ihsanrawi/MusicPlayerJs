@@ -9,24 +9,47 @@ const credentials = {
 };
 
 const spotifyApi = new SpotifyWebApi(credentials);
+let access_token =
+	"BQCB4qKS0M4NpeHeeJLeVDeqJNpVxFdrlRVMfK10d39HnvqnhDig92OOymakjgh8d3qshg_lbSYHkffibWI";
 
-// @route    POST api/posts
-// @desc     Create a post
-// @access   Private
-const getAccessToken = spotifyApi
-	.clientCredentialsGrant()
-	.then((res) => {
-		console.log("The access token expires in " + res.body["expires_in"]);
-		console.log("The access token is " + res.body["access_token"]);
+const playlistId = "7iQd6AGL7HaCJtvCNguqax";
 
-		// Save the access token so that it's used in future calls
-		spotifyApi.setAccessToken(res.body["access_token"]);
-	})
-	.catch((err) => {
-		console.log(
-			"Something went wrong when retrieving an access token",
-			err
-		);
-	});
+router.get("/", async (req, res) => {
+	await spotifyApi
+		.clientCredentialsGrant()
+		.then((data) => {
+			console.log(
+				"The access token expires in " + data.body["expires_in"]
+			);
+			console.log("The access token is " + data.body["access_token"]);
+
+			// Save the access token so that it's used in future calls
+			spotifyApi.setAccessToken(data.body["access_token"]);
+			access_token = spotifyApi.getAccessToken();
+			return res.status(200).json({ token: spotifyApi.getAccessToken() });
+		})
+		.catch((err) => {
+			console.log(
+				"Something went wrong when retrieving an access token",
+				err
+			);
+
+			return res.status(500).json({ err: err });
+		});
+});
+
+router.get("/me", async (req, res) => {
+	spotifyApi.setAccessToken(access_token);
+	await spotifyApi
+		.getPlaylist(playlistId)
+		.then((data) => {
+			console.log(data.body);
+			return res.status(200).json(data.body.tracks);
+		})
+		.catch((err) => {
+			console.log(err);
+			return res.status(500).json({ result: "NOT OK" });
+		});
+});
 
 module.exports = router;
