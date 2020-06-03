@@ -24,6 +24,7 @@
 		"axios": "^0.19.2",
 		"express": "^4.17.1",
 		"express-validator": "^6.5.0",
+		"mongoose": "^5.9.17",
 		"spotify-web-api-node": "^4.0.0"
 	},
 	"devDependencies": {
