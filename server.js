@@ -1,6 +1,10 @@
 const express = require("express");
+const connectDB = require("./db");
 
 const app = express();
+
+// Connect Database
+connectDB();
 
 // Init Middleware
 app.use(express.json());
