@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
 import Button from "../../commons/button";
 import { pushView } from "../../../redux/actions/view";
+import { fetchArtists } from "../../../redux/actions/api";
 
 const Container = styled.div`
 	margin-top: 48px;
@@ -11,12 +12,8 @@ const Container = styled.div`
 
 const ButtonContainer = styled.div``;
 
-export const ArtistListView = ({ pushView, apiState }) => {
+export const ArtistListView = ({ pushView, fetchArtists, apiState }) => {
 	let { artists } = apiState.data;
-
-	if (artists.length == 0) {
-		artists = ["Adele", "Bring Me The Horizon", "Hujan", "Yuna"];
-	}
 
 	const changeView = (title) => {
 		pushView({
@@ -26,11 +23,18 @@ export const ArtistListView = ({ pushView, apiState }) => {
 		});
 	};
 
+	useEffect(() => {
+		if (!artists.length) {
+			fetchArtists();
+			console.log(artists);
+		}
+	});
+
 	return (
 		<Container>
 			<ButtonContainer>
 				{artists &&
-					artists.map((artist, index) => (
+					artists.map(({ artist }, index) => (
 						<Button
 							key={`artist-${artist}`}
 							label={artist}
@@ -52,6 +56,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
 	return {
 		pushView: (view) => dispatch(pushView(view)),
+		fetchArtists: () => dispatch(fetchArtists()),
 	};
 };
 
