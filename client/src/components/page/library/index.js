@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import Button from "../../commons/button";
 import { pushView } from "../../../redux/actions/view";
-import spotifyApi from "../../../api";
 
 const Container = styled.div`
 	margin-top: 48px;
@@ -14,10 +13,6 @@ const ButtonContainer = styled.div``;
 
 export const LibraryView = ({ pushView }) => {
 	const changeView = (name) => {
-		console.log("here");
-
-		console.log(spotifyApi.getMyTopTracks());
-
 		pushView({
 			name,
 			props: {},
