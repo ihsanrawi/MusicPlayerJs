@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/ihsanrawi/MusicPlayerJs/static/js/main.4c1b4acb.chunk.js",
-    "main.js.map": "/ihsanrawi/MusicPlayerJs/static/js/main.4c1b4acb.chunk.js.map",
-    "runtime-main.js": "/ihsanrawi/MusicPlayerJs/static/js/runtime-main.931eac0e.js",
-    "runtime-main.js.map": "/ihsanrawi/MusicPlayerJs/static/js/runtime-main.931eac0e.js.map",
-    "static/css/2.14fbd4c8.chunk.css": "/ihsanrawi/MusicPlayerJs/static/css/2.14fbd4c8.chunk.css",
-    "static/js/2.1fac17d2.chunk.js": "/ihsanrawi/MusicPlayerJs/static/js/2.1fac17d2.chunk.js",
-    "static/js/2.1fac17d2.chunk.js.map": "/ihsanrawi/MusicPlayerJs/static/js/2.1fac17d2.chunk.js.map",
-    "index.html": "/ihsanrawi/MusicPlayerJs/index.html",
-    "precache-manifest.fcfbb66ee668b5b15f0ed3923fc829ec.js": "/ihsanrawi/MusicPlayerJs/precache-manifest.fcfbb66ee668b5b15f0ed3923fc829ec.js",
-    "service-worker.js": "/ihsanrawi/MusicPlayerJs/service-worker.js",
-    "static/css/2.14fbd4c8.chunk.css.map": "/ihsanrawi/MusicPlayerJs/static/css/2.14fbd4c8.chunk.css.map",
-    "static/js/2.1fac17d2.chunk.js.LICENSE.txt": "/ihsanrawi/MusicPlayerJs/static/js/2.1fac17d2.chunk.js.LICENSE.txt"
+    "main.js": "/MusicPlayerJs/static/js/main.4c1b4acb.chunk.js",
+    "main.js.map": "/MusicPlayerJs/static/js/main.4c1b4acb.chunk.js.map",
+    "runtime-main.js": "/MusicPlayerJs/static/js/runtime-main.fedd7172.js",
+    "runtime-main.js.map": "/MusicPlayerJs/static/js/runtime-main.fedd7172.js.map",
+    "static/css/2.14fbd4c8.chunk.css": "/MusicPlayerJs/static/css/2.14fbd4c8.chunk.css",
+    "static/js/2.cf9ed633.chunk.js": "/MusicPlayerJs/static/js/2.cf9ed633.chunk.js",
+    "static/js/2.cf9ed633.chunk.js.map": "/MusicPlayerJs/static/js/2.cf9ed633.chunk.js.map",
+    "index.html": "/MusicPlayerJs/index.html",
+    "precache-manifest.7c417f45cf4d289aad61d961bd950d5d.js": "/MusicPlayerJs/precache-manifest.7c417f45cf4d289aad61d961bd950d5d.js",
+    "service-worker.js": "/MusicPlayerJs/service-worker.js",
+    "static/css/2.14fbd4c8.chunk.css.map": "/MusicPlayerJs/static/css/2.14fbd4c8.chunk.css.map",
+    "static/js/2.cf9ed633.chunk.js.LICENSE.txt": "/MusicPlayerJs/static/js/2.cf9ed633.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.931eac0e.js",
+    "static/js/runtime-main.fedd7172.js",
     "static/css/2.14fbd4c8.chunk.css",
-    "static/js/2.1fac17d2.chunk.js",
+    "static/js/2.cf9ed633.chunk.js",
     "static/js/main.4c1b4acb.chunk.js"
   ]
 }
