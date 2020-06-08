@@ -7,8 +7,7 @@ import {
 
 const initialState = {
 	data: {
-		artists: ["Adele", "Bring Me The Horizon", "Hujan", "Yuna"],
-		// artists: [],
+		artists: [],
 		albums: [],
 		artistData: {},
 		albumData: {},
@@ -53,7 +52,7 @@ const apiReducer = (state = initialState, action) => {
 					},
 					albumData: {
 						...state.data.albumData,
-						...action.tracks,
+						...action.albumData,
 					},
 				},
 			};
