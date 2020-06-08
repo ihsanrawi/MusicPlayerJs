@@ -15,18 +15,17 @@ const ButtonContainer = styled.div``;
 export const ArtistListView = ({ pushView, fetchArtists, apiState }) => {
 	let { artists } = apiState.data;
 
-	const changeView = (title) => {
+	const changeView = (artist) => {
 		pushView({
 			name: "Artist",
-			title,
-			props: {},
+			title: artist,
+			props: { artist },
 		});
 	};
 
 	useEffect(() => {
 		if (!artists.length) {
 			fetchArtists();
-			console.log(artists);
 		}
 	});
 
